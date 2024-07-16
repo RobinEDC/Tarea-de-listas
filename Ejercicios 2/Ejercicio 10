@@ -1,0 +1,9 @@
+# 10. Leer 10 números enteros, almacenarlos en una lista. Luego leer un entero y determinar cuántos divisores exactos tiene este último número entre los valores almacenados en la lista.
+
+lista = [int(input(f"Ingrese el número {i+1}: ")) for i in range(10)]
+
+numero_a_evaluar = int(input("Ingrese un número adicional para evaluar divisores: "))
+
+divisores_exactos = sum(1 for n in lista if numero_a_evaluar % n == 0)
+
+print(f"La cantidad de divisores exactos del número {numero_a_evaluar} en la lista es: {divisores_exactos}")

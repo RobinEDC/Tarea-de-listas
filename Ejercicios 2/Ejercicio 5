@@ -1,0 +1,25 @@
+# 5. Leer 10 números enteros, almacenarlos en una lista y determinar en qué posición se encuentra el número primo con mayor cantidad de dígitos pares.
+
+import math
+
+def es_primo(n):
+    if n <= 1:
+        return False
+    if n == 2:
+        return True
+    for i in range(2, int(math.sqrt(n)) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def contar_digitos_pares(n):
+    return sum(1 for digit in str(abs(n)) if int(digit) % 2 == 0)
+
+lista = [int(input(f"Ingrese el número {i+1}: ")) for i in range(10)]
+primos_con_digitos_pares = [(n, contar_digitos_pares(n)) for n in lista if es_primo(n)]
+if primos_con_digitos_pares:
+    primo_mayor_digitos_pares = max(primos_con_digitos_pares, key=lambda x: x[1])[0]
+    posicion_primo_mayor_digitos_pares = lista.index(primo_mayor_digitos_pares)
+    print(f"La posición del primo con mayor cantidad de dígitos pares es: {posicion_primo_mayor_digitos_pares}")
+else:
+    print("No se ingresaron números primos con dígitos pares.")

@@ -1,0 +1,18 @@
+# 9. Leer 10 números enteros, almacenarlos en una lista y calcular la factorial a cada uno de los números leídos almacenándolos en otra lista.
+
+def factorial(n):
+    if n < 0:
+        return None
+    elif n == 0:
+        return 1
+    else:
+        fact = 1
+        for i in range(1, n + 1):
+            fact *= i
+        return fact
+
+lista = [int(input(f"Ingrese el número {i+1}: ")) for i in range(10)]
+
+factoriales = [factorial(n) for n in lista]
+
+print(f"Los factoriales de los números leídos son: {factoriales}")

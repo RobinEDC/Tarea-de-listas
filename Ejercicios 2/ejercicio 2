@@ -1,0 +1,9 @@
+# 2. Leer 10 enteros, almacenarlos en una lista y determinar en qué posición del arreglo está el mayor número par leído.
+
+lista = [int(input(f"Ingrese el número {i+1}: ")) for i in range(10)]
+numeros_pares = [n for n in lista if n % 2 == 0]
+if numeros_pares:
+    posicion_mayor_par = lista.index(max(numeros_pares))
+    print(f"La posición del mayor número par leído es: {posicion_mayor_par}")
+else:
+    print("No se ingresaron números pares.")

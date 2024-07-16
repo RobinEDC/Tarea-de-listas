@@ -1,0 +1,5 @@
+# 1. Leer 10 enteros, almacenarlos en una lista y determinar en qué posición del arreglo está el mayor número leído.
+
+lista = [int(input(f"Ingrese el número {i+1}: ")) for i in range(10)]
+posicion_mayor = lista.index(max(lista))
+print(f"La posición del mayor número leído es: {posicion_mayor}")

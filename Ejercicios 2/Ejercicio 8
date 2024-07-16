@@ -1,0 +1,7 @@
+# 8. Leer 10 números enteros, almacenarlos en una lista y determinar cuántos números negativos hay.
+
+lista = [int(input(f"Ingrese el número {i+1}: ")) for i in range(10)]
+
+cantidad_negativos = sum(1 for n in lista if n < 0)
+
+print(f"La cantidad de números negativos es: {cantidad_negativos}")

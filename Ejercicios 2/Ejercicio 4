@@ -1,0 +1,20 @@
+# 4. Leer 10 números enteros, almacenarlos en una lista y determinar cuántos números de los almacenados en dicho arreglo comienzan en dígito primo.
+
+import math
+
+def es_primo(n):
+    if n <= 1:
+        return False
+    if n == 2:
+        return True
+    for i in range(2, int(math.sqrt(n)) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def primer_digito_primo(n):
+    return es_primo(int(str(abs(n))[0]))
+
+lista = [int(input(f"Ingrese el número {i+1}: ")) for i in range(10)]
+cantidad_primer_digito_primo = sum(1 for n in lista if primer_digito_primo(n))
+print(f"La cantidad de números que comienzan con un dígito primo es: {cantidad_primer_digito_primo}")

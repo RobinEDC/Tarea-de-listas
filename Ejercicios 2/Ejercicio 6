@@ -1,0 +1,6 @@
+# 6. Leer 10 números enteros, almacenarlos en una lista y determinar en qué posiciones se encuentran los números con más de 3 dígitos.
+
+lista = [int(input(f"Ingrese el número {i+1}: ")) for i in range(10)]
+posiciones_mas_de_3_digitos = [i for i, n in enumerate(lista) if len(str(abs(n))) > 3]
+
+print(f"Las posiciones de los números con más de 3 dígitos son: {posiciones_mas_de_3_digitos}")

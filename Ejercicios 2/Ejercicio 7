@@ -1,0 +1,5 @@
+# 7. Leer 10 números enteros, almacenarlos en una lista y determinar a cuánto es igual el promedio entero de los datos de la lista.
+lista = [int(input(f"Ingrese el número {i+1}: ")) for i in range(10)]
+promedio_entero = sum(lista) // len(lista)
+
+print(f"El promedio entero de los datos de la lista es: {promedio_entero}")
